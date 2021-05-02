@@ -1,0 +1,7 @@
+[submodule "esp-idf-repo"]
+	path = esp-idf-repo
+	url = /home/karsh/projects/github/Workspace/UP_WS/devTools/esp32DevEnvSetup/esp-idf
+[submodule "esp-idf"]
+	path = esp-idf
+	url = https://github.com/espressif/esp-idf.git
+	branch = release/v3.3
