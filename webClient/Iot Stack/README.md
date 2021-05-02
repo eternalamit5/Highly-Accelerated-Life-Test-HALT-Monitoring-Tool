@@ -1,10 +1,8 @@
 # HALT IoT Stack
-IoT Stack = Mosquitto MQTT broker + Telegraf + InfluxDB + Grafana stack 
+IoT Stack = Mosquitto MQTT broker + Telegraf + InfluxDB + Grafana stack + MongoDB 
 
 
-It quickly creates the TIG stack with __basic__ user authentication for all
-components in the stack. This case provides the most basic level security, where username and passwords
-are required for all the components.
+It quickly creates the IoT stack with __basic__ user authentication for all components in the stack. This case provides the most basic level security, where username and passwords are required for all the components.
 
 ## Environment Variables & Configuration Files
 
@@ -27,11 +25,17 @@ are required for all the components.
 
 ## Steps to Bring the Prototype Stack Up
 
-1. Create a network for your stack:
+1. Bring the stack up:
 
-        docker network create iotstack
+        docker-compose -f docker-compose.tigm.yml up
+        
+2. Bring the stack down:
 
-2. Encrypting the Passwords for Mosquitto Broker:
+        docker-compose -f docker-compose.tigm.yml down
+ 
+        
+
+3. Encrypting the Passwords for Mosquitto Broker:
 
     ```bash
     cd prototype/
@@ -42,33 +46,19 @@ are required for all the components.
 
         cat mosquitto/config/passwd
 
-3. Bring the stack up:
-
-        USER_ID="$(id -u)" GRP_ID="$(id -g)" docker-compose -f docker-compose.prototype.yml up
-    
-    add `-d` flag to detach the stack logs
-
-## Component Availability behind Reverse-Proxy
-
-|   Component  |  Credentials (username:password)  |                         Endpoint                         |
-|:---------:|:-----------------:|:-----------------------------------------------------------------------------------------------------:|
-| `traefik` | `admin:tiguitto`  | `curl -i -u admin:tiguitto http://localhost/dashboard/`<br> Browser: `http://<IP_ADDRESS>/dashboard/` |
-| `grafana` | `admin:tiguitto`  | `curl -i -u admin:tiguitto http://localhost/grafana/api/health`<br> Browser: `http://<IP_ADDRESS>/grafana`       |
-| `influxdb`| `tiguitto:tiguitto` | `curl -i -u tiguitto:tiguitto http://localhost/influxdb/ping` |
-| `mosquitto` | `{sub,pub}client:tiguitto` | Use an MQTT Client here         |
 
 ## Component Logs
-- For `telegraf`, `influxdb`, `grafana`, `mosquitto`, `traefik` stdout Logs:
+- For `telegraf`, `influxdb`, `grafana`, `mosquitto`, `mongodb` stdout Logs:
 
-        docker-compose -f docker-compose.prototype.yml logs -f telegraf
+        docker-compose -f docker-compose.tigm.yml logs -f telegraf
         # OR
-        docker-compose -f docker-compose.prototype.yml logs -f influxdb
+        docker-compose -f docker-compose.tigm.yml logs -f influxdb
         # OR
-        docker-compose -f docker-compose.prototype.yml logs -f grafana
+        docker-compose -f docker-compose.tigm.yml logs -f grafana
         # OR
-        docker-compose -f docker-compose.prototype.yml logs -f mosquitto
+        docker-compose -f docker-compose.tigm.yml logs -f mosquitto
         # OR
-        docker-compose -f docker-compose.prototype.yml logs -f traefik
+        docker-compose -f docker-compose.tigm.yml logs -f mongodb
 
 ## Component Ports
 
@@ -76,9 +66,10 @@ are required for all the components.
 | ----------  | ----- |
 | `influxdb`  | 8086 (internal)  |
 | `telegraf`  | n/a (internal)  |
-| `grafana`   | 3000 (internal) |
-| `mosquitto` | 1883 (mqtt), 1884 (ws) (internal) |
-| `traefik`   | 80, 1883, 1884 (external) |
+| `grafana`   | 3005 (internal) |
+| `mosquitto` | 1887 (mqtt), 1884 (ws) (internal) |
+| `mongo` | 27017 (internal) |
+
 
 ## Component Level Security
 
@@ -179,25 +170,10 @@ except KeyboardInterrupt:
 
 # Snapshots
 
-- Grafana Dashboard Login Behind Traefik Reverse-Proxy with Subpath: `<IP_address>/grafana`
+- Data in InfluxDB using chronograph interface: `http://localhost:8888/`
 
-![Prototype Grafana Login](Images/grafana.png)
+![Chronograph interface](Images/MQTTclient.png)
 
-- Traefik Dashboard Login: `<IP_address>/dashboard/` (username:password: `admin:tiguitto`)
+- Grafana Dashboard Login Behind Traefik Reverse-Proxy with Subpath: `http://localhost:3005/`
 
-![Prototype Traefik Login](Images/TraeficLogin.png)
-
-- Traefik Dashboard after Credentials: `<IP_address>/dashboard/`
-
-![Prototype Traefik Dashboard](Images/Traefic.png)
-
-
-![Prototype Traefik Dashboard](Images/TraeficDashboard.png)
-
-- MQTT Client (using [MQTT.fx](https://mqttfx.org)) Settings to connect to Broker: `tcp://<IP_address>:1883`
-
-![Prototype MQTT Client Settings 1: Connecting to Broker](Images/MQTTclient.png)
-
-- MQTT Client Setting to enter Credentials for broker:
-
-![Prototype MQTT Client Settings 2: Credentials in Client for Broker](Images/MQTTclientsettings.png)
+![Grafana Login](Images/grafana.png)
