@@ -1,7 +1,8 @@
 const initialState = {
   app_name: 'HALT',
   user_id: null,
-  server_address: "http://127.0.0.1:1515",
+  server_address: "http://localhost:1515",
+  websocket_address: "ws://127.0.0.1:1515/channel/telemetry",
   influxdb_instance: null,
 };
 

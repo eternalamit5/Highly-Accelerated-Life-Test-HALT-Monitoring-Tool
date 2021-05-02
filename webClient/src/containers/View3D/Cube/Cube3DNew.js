@@ -28,7 +28,6 @@ class cube3DNew extends Component {
 
     this.state = {
       deviceid: "101",
-      endpoint: "ws://127.0.0.1:1515",
       playPause: "play",
       update_counter: true,
     };
@@ -352,6 +351,7 @@ const mapStateToProps = (state) => {
   return {
     user_id: state.user_id,
     server_address: state.server_address,
+    websocket_address:state.websocket_address,
     influxdb_instance: state.influxdb_instance,
   };
 };
