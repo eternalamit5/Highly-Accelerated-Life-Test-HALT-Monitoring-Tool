@@ -1,0 +1,13 @@
+    // USER_NOTIFICATION_URL :'/uptime/user/notification/',
+    // USER_ACCOUNT_URL :'/uptime/user/account/',
+    // USER_HELP_URL : '/uptime/help',
+    // USER_LOGOUT_URL : '/uptime/logout',
+    // USER_LOGIN_URL : '/uptime/login',
+    // HOME_URL : '/uptime/home',
+    // REGISTRATION_URL : '/uptime/registration',
+    // ABOUTUS_URL : '/uptime/about',
+    // DEV_STATUS_URL : '/uptime/sense/device/status',
+    // DEV_CONFIG_URL : '/uptime/sense/device/config',
+    // SYS_STATUS_URL : '/uptime/sense/system/status',
+    // PREDICT_URL : '/uptime/predict/device/config',
+    // PREDICT_CONFIG_URL : '/uptime/predict/system/status'

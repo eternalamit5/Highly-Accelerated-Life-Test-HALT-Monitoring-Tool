@@ -1,0 +1,19 @@
+.jumbotron {
+  background-image: url(https://photos.app.goo.gl/bq35SWUfkTkXSLUy8);
+  background-repeat: no-repeat, repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 50px;
+  font-weight: bold;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding: 100px;
+  border-radius: 50px;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.jumbotron h1,
+p {
+  background-color: #ffffff73;
+  padding: 50px;
+}

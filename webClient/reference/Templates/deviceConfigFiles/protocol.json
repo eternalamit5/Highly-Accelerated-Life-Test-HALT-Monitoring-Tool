@@ -1,0 +1,106 @@
+{
+	"mqtt_client": {
+		"en": true,
+		"uri": "mqtt://192.168.0.102:1886",
+		"port": 1886,
+		"keep_alive_timeout": 1000,
+		"qos": 1,
+		"enable_clean_session": true,
+		"enable_auto_reconnect": true,
+		"last_will_topic": "",
+		"last_will_msg": ""
+	},
+
+	"influx_db_client": {
+		"host": "192.168.0.103",
+		"port": 8086,
+		"db_name": "mydb",
+		"usr_name": "fussy",
+		"password": "admin123"
+	},
+
+	"ble_client_uart_policy": {
+		"client0_en": false,
+		"client0_name": "client0",
+		"client0_max_device_to_scan": 2,
+		"client0_service_uuid": "",
+		"client0_tx_uuid": "",
+		"client0_rx_uuid": "",
+		"client0_bonded_dev_address": "",
+		"client0_bonded_dev_address_type": "",
+
+		"client1_en": false,
+		"client1_name": "client0",
+		"client1_max_device_to_scan": 2,
+		"client1_service_uuid": "",
+		"client1_tx_uuid": "",
+		"client1_rx_uuid": "",
+		"client1_bonded_dev_address": "",
+		"client1_bonded_dev_address_type": "",
+
+		"client2_en": false,
+		"client2_name": "client0",
+		"client2_max_device_to_scan": 2,
+		"client2_service_uuid": "",
+		"client2_tx_uuid": "",
+		"client2_rx_uuid": "",
+		"client2_bonded_dev_address": "",
+		"client2_bonded_dev_address_type": "",
+
+		"client3_en": false,
+		"client3_name": "client0",
+		"client3_max_device_to_scan": 2,
+		"client3_service_uuid": "",
+		"client3_tx_uuid": "",
+		"client3_rx_uuid": "",
+		"client3_bonded_dev_address": "",
+		"client3_bonded_dev_address_type": "",
+
+		"client4_en": false,
+		"client4_name": "client0",
+		"client4_max_device_to_scan": 2,
+		"client4_service_uuid": "",
+		"client4_tx_uuid": "",
+		"client4_rx_uuid": "",
+		"client4_bonded_dev_address": "",
+		"client4_bonded_dev_address_type": "",
+
+		"client5_en": false,
+		"client5_name": "client0",
+		"client5_max_device_to_scan": 2,
+		"client5_service_uuid": "",
+		"client5_tx_uuid": "",
+		"client5_rx_uuid": "",
+		"client5_bonded_dev_address": "",
+		"client5_bonded_dev_address_type": "",
+
+		"client6_en": false,
+		"client6_name": "client0",
+		"client6_max_device_to_scan": 2,
+		"client6_service_uuid": "",
+		"client6_tx_uuid": "",
+		"client6_rx_uuid": "",
+		"client6_bonded_dev_address": "",
+		"client6_bonded_dev_address_type": "",
+
+		"client7_en": false,
+		"client7_name": "client0",
+		"client7_max_device_to_scan": 2,
+		"client7_service_uuid": "",
+		"client7_tx_uuid": "",
+		"client7_rx_uuid": "",
+		"client7_bonded_dev_address": "",
+		"client7_bonded_dev_address_type": ""
+	},
+
+	"ble_server_uart_policy": {
+		"server_en": false,
+		"server_name": "ble_server",
+		"server_service_uuid": "",
+		"server_tx_uuid": "",
+		"server_rx_uuid": "",
+		"server_dev_address": "",
+		"server_dev_address_type": ""
+	}
+}
+

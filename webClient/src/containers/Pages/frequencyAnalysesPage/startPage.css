@@ -1,0 +1,73 @@
+.Title20 {
+  color: Black;
+  text-align: center;
+  font-size: 20px;
+}
+
+.Title24 {
+  color: Black;
+  text-align: center;
+  font-size: 24px;
+}
+
+.Title28 {
+  color: Black;
+  text-align: center;
+  font-size: 28px;
+}
+
+.Title32 {
+  color: Black;
+  text-align: center;
+  font-size: 28px;
+}
+
+.Paragraph20 {
+  color: rgb(50, 50, 50);
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 0px;
+  margin-right: 20px;
+  text-align: justify;
+  text-justify: inter-word;
+  font-size: 24px;
+}
+
+.Paragraph16 {
+  color: rgb(50, 50, 50);
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: justify;
+  text-justify: inter-word;
+  font-size: 16px;
+}
+
+.Paragraph12 {
+  color: rgb(50, 50, 50);
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: justify;
+  text-justify: inter-word;
+  font-size: 12px;
+}
+
+.Paragraph14 {
+  color: rgb(50, 50, 50);
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: justify;
+  text-justify: inter-word;
+  font-size: 14px;
+}
+
+.Button {
+  margin-top: 20px;
+  margin-right: 20px;
+  width: 100px;
+}

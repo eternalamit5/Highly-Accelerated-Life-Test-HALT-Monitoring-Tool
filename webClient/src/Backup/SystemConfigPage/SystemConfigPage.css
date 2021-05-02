@@ -1,0 +1,21 @@
+.Paragraph20 {
+    color: rgb(50, 50, 50);
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+    margin-right: 20px;
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 24px;
+  }
+  
+  .Paragraph16 {
+      color: rgb(50, 50, 50);
+      margin-top: 10px;
+      margin-bottom: 20px;
+      margin-left: 20px;
+      margin-right: 20px;
+      text-align: justify;
+      text-justify: inter-word;
+      font-size: 18px;
+    }

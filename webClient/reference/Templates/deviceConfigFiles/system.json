@@ -1,0 +1,56 @@
+{
+	"device_properties": {
+		"device_type": "Gateway",
+		"device_uuid": "0001",
+		"network_id": "0001",
+		"description": "sector 1, sub-sector 1, motion and stress sensor node"
+	},
+
+	"comm_hardware_policy": {
+		"uart0_en": true,
+		"uart0_baud": 115200,
+		"uart1_en": false,
+		"uart1_baud": 115200,
+		"uart2_en": false,
+		"uart2_baud": 115200,
+		"i2c0_en": true,
+		"i2c0_freq": 50000,
+		"i2c1_en": true,
+		"i2c1_freq": 50000,
+		"hsspi_en": true,
+		"lsspi_en": false,
+		"wifi_en": true,
+		"wifi_smartconnect_en": false,
+		"wifi_reconnect_attempt": 10,
+		"ssid1": "biba-testbed",
+		"password1": "she26ghr01",
+		"ssid2": "dessert",
+		"password2": "icecream",
+		"ssid3": "",
+		"password3": "",
+		"ssid4": "",
+		"password4": "",
+		"ssid5": "",
+		"password5": "",
+		"ssid6": "",
+		"password6": "",
+		"ssid7": "",
+		"password7": "",
+		"ssid8": "",
+		"password8": "",
+		"ssid9": "",
+		"password9": "",
+		"ssid10": "",
+		"password10": "",
+		"indicator_en": true
+	},
+	
+	"error_policy_t": {
+		"std_exception": "",
+		"error_major": "",
+		"error_minor": "",
+		"warn_major": "",
+		"warn_minor": ""
+	}
+}
+

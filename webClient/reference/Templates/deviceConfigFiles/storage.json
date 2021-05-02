@@ -1,0 +1,7 @@
+{
+	"sd_card_policy": {
+		"en": false,
+		"peripheral_comm_interface": "hsspi"
+	}
+
+}

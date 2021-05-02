@@ -1,0 +1,49 @@
+{
+	"bmi160_policy": {
+		"en": true,
+		"id": "1",
+		"description": "measures linear and rotation accelerations",
+		"measurement_type": "MotionSense",
+		"measurement_topic": "uptime/telemetry",
+		"log_msg_topic": "uptime/log/bmi160",
+		"peripheral_comm_interface": "i2c_0",
+		"peripheral_comm_address_dec": 105,
+		"telemetry_interface": "mqtt",
+		"gyroscope_range": 250,
+		"gyro_x_offset": 0,
+		"gyro_y_offset": 0,
+		"gyro_z_offset": 0,
+		"gyro_scaleCorrection": 0,
+		"gyro_bais": 0,
+		"accelerometerRange": 2,
+		"acc_x_offset": 0,
+		"acc_y_offset": 0,
+		"acc_z_offset": 0,
+		"acc_scaleCorrection": 0
+	},
+
+	"bme280_policy": {
+		"en": true,
+		"id": "1",
+		"description": "measures pressure, humidity and temperature",
+		"measurement_type": "EvnSense",
+		"measurement_topic": "uptime/telemetry",
+		"log_msg_topic": "uptime/log/bme280",
+		"peripheral_comm_interface": "i2c_0",
+		"peripheral_comm_address_dec": 119,
+		"telemetry_interface": "mqtt",
+		"sea_level_atm_pressure": 1006.0
+	},
+
+	"gps_policy": {
+		"en": true,
+		"id": "1",
+		"description": "measures gps co-ordinates",
+		"measurement_type": "LocationSense",
+		"measurement_topic": "uptime/telemetry",
+		"log_msg_topic": "uptime/log/gps",
+		"peripheral_comm_interface": "i2c_0",
+		"peripheral_comm_address_dec": 66,
+		"telemetry_interface": "mqtt"
+	}
+}

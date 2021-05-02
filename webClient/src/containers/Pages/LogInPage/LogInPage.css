@@ -1,0 +1,29 @@
+.WelcomeMsg {
+  text-align: Center;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.PageInfo {
+  color: Black;
+  text-align: Left;
+  font-size: 18px;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.FormGroup {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.InputField {
+  width: 420px;
+}
+
+.Button {
+  margin-top: 20px;
+  margin-right: 20px;
+  width: 400px;
+}
