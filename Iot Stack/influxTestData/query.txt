@@ -1,0 +1,9 @@
+
+
+This query data has a sample rate of 25HZ
+SELECT "Acc(X)" FROM "sensor"."autogen"."Accelerometer" WHERE time > '2020-09-11T13:30:00.000Z' AND time < '2020-09-11T13:40:00.000Z'
+SELECT "Acc(X)", "Acc(Y)", "Acc(Z)" FROM "sensor"."autogen"."Accelerometer" WHERE time > '2020-09-11T13:30:00.000Z' AND time < '2020-09-11T13:40:00.000Z'
+
+This query data has a sample rate of 1000HZ
+SELECT "Acc(X)" FROM "sensor"."autogen"."Accelerometer" WHERE time > '2020-09-11T15:30:00.000Z' AND time < '2020-09-11T15:40:00.000Z'
+SELECT "Acc(X)", "Acc(Y)", "Acc(Z)" FROM "sensor"."autogen"."Accelerometer" WHERE time > '2020-09-11T15:30:00.000Z' AND time < '2020-09-11T15:40:00.000Z'
