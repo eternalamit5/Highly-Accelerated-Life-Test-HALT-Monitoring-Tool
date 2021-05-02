@@ -1,0 +1,233 @@
+==========================================================================================================================================================================================================
+										MQTT-TELEGRAF-INFLUX-GRAFANA
+=========================================================================================================================================================================================================
+
+First Create a Folder eg. dockerImages and execute the below commands in the folder path to keep all docker images in one folder.
+
+Note:
+
+Remember to delete all the docker images first using the below commands if you encouter some errors and then run the influxDB server and client.
+
+1. To see docker containers:
+
+sudo docker container ps --all
+
+2. To delete docker container if duplicate docker images are running
+
+sudo docker rm <docker id>
+
+3. To stop all running docker 
+
+sudo docker stop $(sudo docker ps -aq)
+
+4. To install influxdb
+
+sudo apt install influxdb
+
+To Run influxDB Server:
+
+influxd
+
+
+
+=============
+MQTT broker
+=============
+To run mosquitto broker choose either of two methods
+	Method 1:
+		Download mosquitto broker docker image if you don't have it
+			$sudo docker pull eclipse-mosquitto
+			
+		Run mosquitto broker if downloaded its docker image
+			$sudo docker run -it -p 1883:1883 -p 9001:9001 eclipse-mosquitto
+		
+	Method 2:
+		Downalod install mosquitto broker in the system using apt-get
+			$sudo apt-get install mosquitto
+		Run mosquitto broker without docker 
+			$service mosquitto start
+				or
+			$mosquitto -v 
+
+
+
+==========
+Influxdb
+==========
+Download influxdb docker image
+	$sudo docker pull influxdb
+	
+Start Influxdb Server
+	$sudo docker run -d -p 8086:8086 -v influxdb:/var/lib/influxdb --name influxdb influxdb
+	
+Open Influxdb client to check what's happening in database using queries
+	$sudo docker exec -it influxdb influx
+	
+InfluxDB commands (Optional):
+
+	create database <data base name of your choice>
+	create user "<username>" with password '<password>'
+	To see the all databases:  SHOW DATABASES
+	Enter the Database: use <database name>
+	
+	To see all tables inside the database: SHOW MEASUREMENTS	
+	grant all on <data base name> to <username>
+	
+	insert data (Here Motionsense is a Measurement which is similar to the table name of SQL): INSERT MotionSense,SensorType=Gyro roll=1.2,yaw=5,pitch=3
+	See the data of the Measurements: SELECT * FROM "MotionSense"
+	
+	
+	
+	
+===========
+Telegraf
+===========
+Download Telegraf docker image
+	$sudo docker pull telegraf
+	
+Create default configuration
+	$sudo docker run --rm telegraf telegraf config > telegraf.conf
+	
+Open and edit telegraf configurations
+	$sudo geany telegraf.conf
+	
+	
+	>>>>>>>>>>>>>>>>>>>>>>>>> Edits in telegraf.conf (start)<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	
+	
+		###############################################################################
+		#                            OUTPUT PLUGINS                                   #
+		###############################################################################
+		 
+		 
+		# Configuration for sending metrics to InfluxDB
+		[[outputs.influxdb]]
+		  ## The full HTTP or UDP URL for your InfluxDB instance.
+		  urls = ["https://134.102.98.234:8086"] # IP Address of DB5 InfluxDB Server
+		 
+		  ## The target database for metrics; will be created as needed.
+		  ## For UDP url endpoint database needs to be configured on server side.
+		  database = "MQTT" # Database Name here
+		 
+		  ## If true, no CREATE DATABASE queries will be sent.  Set to true when using
+		  ## Telegraf with a user without permissions to create databases or when the
+		  ## database already exists.
+		  skip_database_creation = false
+		 
+		  ## Timeout for HTTP messages.
+		  timeout = "120s"
+		 
+		  ## HTTP Basic Auth
+		  username = "des"
+		  password = "lincoln"
+		 
+		  ## HTTP User-Agent
+		  user_agent = "docker-telegraf"
+		 
+		  ## Use TLS but skip chain & host verification
+		  insecure_skip_verify = true
+		 
+		###############################################################################
+		#                            INPUT PLUGINS                                    #
+		###############################################################################
+		 
+		 
+		# # Read metrics from MQTT topic(s)
+		[[inputs.mqtt_consumer]]
+		   ## MQTT broker URLs to be used. The format should be scheme://host:port,
+		   ## schema can be tcp, ssl, or ws.
+		   servers = ["tcp://134.102.96.205:1883"] # IP address of Docker Server's MQTT broker
+		 
+		   ## Topics that will be subscribed to.
+		   topics = [
+		     "Uptime/Telemetry"
+		   ] # Topics to Subscribe to
+		 
+		   ## The message topic will be stored in a tag specified by this value.  If set
+		   ## to the empty string no topic tag will be created.
+		   topic_tag = "topic"
+		#
+		#   ## QoS policy for messages
+		#   ##   0 = at most once
+		#   ##   1 = at least once
+		#   ##   2 = exactly once
+		#   ##
+		#   ## When using a QoS of 1 or 2, you should enable persistent_session to allow
+		#   ## resuming unacknowledged messages.
+		    qos = 1
+		#
+		#   ## Connection timeout for initial connection in seconds
+		    connection_timeout = "120s"
+		 
+		#   ## Persistent session disables clearing of the client session on connection.
+		#   ## In order for this option to work you must also set client_id to identity
+		#   ## the client.  To receive messages that arrived while the client is offline,
+		#   ## also set the qos option to 1 or 2 and don't forget to also set the QoS when
+		#   ## publishing.
+		    # persistent_session = true
+		#
+		#   ## If unset, a random client ID will be generated.
+		    client_id = ""
+		 
+		#   ## Data format to consume.
+		#   ## Each data format has its own unique set of configuration options, read
+		#   ## more about them here:
+		#   ## https://github.com/influxdata/telegraf/blob/master/docs/DATA_FORMATS_INPUT.md
+		    data_format = "influx"
+		    
+		    
+	>>>>>>>>>>>>>>>>>>>>>>>>> Edits in telegraf.conf (ended)<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	
+	
+	
+Run telegraf
+	$sudo docker run -d --name="karsh_telegraf" -v $(pwd)/telegraf.conf:/etc/telegraf/telegraf.conf:ro --net=host telegraf
+	
+	
+==========
+Grafana
+==========
+Download grafana docker image
+	$sudo docker pull grafana/grafana
+	
+Run grafana 
+	$sudo docker run -d -p 3000:3000 grafana/grafana
+	
+	
+Open Grafana on browser
+	http://<your_raspberry_ip>:3000
+		
+    	Login to Grafana using (admin/admin)
+    	
+    	Configure the data source selecting InfluxDB
+    	
+    	Create your dashboard with graphs as you prefer
+    	
+    	
+    	
+================
+References
+================
+1. https://dzone.com/articles/raspberry-pi-iot-sensors-influxdb-mqtt-and-grafana
+2. https://confluence.ikap.biba.uni-bremen.de/display/~des/Telegraf%2C+InfluxDB+and+MQTT+for+BIBA+Server
+3. https://grafana.com/docs/grafana/latest/installation/docker/
+4. https://docs.influxdata.com/influxdb/v1.8/
+5. http://www.steves-internet-guide.com/mosquitto-broker/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1.	https://dzone.com/articles/raspberry-pi-iot-sensors-influxdb-mqtt-and-grafana
+2. 	https://confluence.ikap.biba.uni-bremen.de/display/~des/Telegraf%2C+InfluxDB+and+MQTT+for+BIBA+Server
+

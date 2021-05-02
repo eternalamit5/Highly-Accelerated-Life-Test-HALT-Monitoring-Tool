@@ -1,0 +1,14 @@
+/*
+ * httpClientTest.h
+ *
+ *  Created on: Jun 8, 2020
+ *      Author: karsh
+ */
+
+#ifndef COMPONENTS_COMMUNICATION_HTTPCLIENT_HTTPCLIENTTEST_H_
+#define COMPONENTS_COMMUNICATION_HTTPCLIENT_HTTPCLIENTTEST_H_
+
+void httpClientTask(void* arg);
+
+
+#endif /* COMPONENTS_COMMUNICATION_HTTPCLIENT_HTTPCLIENTTEST_H_ */
