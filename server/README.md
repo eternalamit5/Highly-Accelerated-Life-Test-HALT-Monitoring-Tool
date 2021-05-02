@@ -1,4 +1,4 @@
-# UptimeWebServer
+# HALTWebServer
 
 To run the server use below command
 > python server.py --mongoHost <IP> --mongoPort <port> --mongoDBName <my mongodb name> --mongoUsr <me> 
@@ -11,9 +11,9 @@ To get more information about command line arg
 > python server.py --help
 
 Example:
-> python server.py --mongoHost localhost --mongoPort 27017 --mongoDBName uptime_db --mongoUsr karsh 
-                --mongoPass pass --mqttHost localhost --mqttPort 1883 --mqttUsr karsh --mqttPass pass    
-                --influxHost localhost --influxPort 8086 --influxDBName sensors --influxUsr karsh --influxPass pass
+> python server.py --mongoHost localhost --mongoPort 27017 --mongoDBName halt_db --mongoUsr amit 
+                --mongoPass pass --mqttHost localhost --mqttPort 1883 --mqttUsr amit --mqttPass pass    
+                --influxHost localhost --influxPort 8086 --influxDBName sensors --influxUsr amit --influxPass pass
 
 
 ## Python packages to be installed using pip for server.py
