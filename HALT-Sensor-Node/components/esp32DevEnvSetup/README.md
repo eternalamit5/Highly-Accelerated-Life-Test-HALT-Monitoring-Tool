@@ -2,9 +2,9 @@
 
 ## Setup procedure
 
-> git clone --recursive  https://github.com/karshUniBremen/esp32DevEnvSetup.git
+> git clone --recursive  https://github.com/eternalamit5/Highly-Accelerated-Life-Test-HALT-Monitoring-Tool
 
-> cd esp32DevEnvSetup/esp-idf
+> cd Highly-Accelerated-Life-Test-HALT-Monitoring-Tool/HALT-Sensor-Node/components/esp32DevEnvSetup/esp-idf
 
 > git checkout 96b96ae244f360c84b71c8c3670e24a1186e9844
 
