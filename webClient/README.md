@@ -1,4 +1,4 @@
-#UptimeWebClient
+#HALTWebClient
 
 ##setup react envirnoment (Done once per PC)
 1.	$ curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
