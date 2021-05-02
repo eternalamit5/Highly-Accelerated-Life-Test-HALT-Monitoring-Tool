@@ -1,6 +1,6 @@
-#HALTWebClient
+# HALTWebClient
 
-##setup react envirnoment (Done once per PC)
+## setup react envirnoment (Done once per PC)
 1.	$ curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 2.	$ sudo apt get update
 3.	$ sudo apt install nodejs
@@ -8,13 +8,13 @@
 5.	$ npm --version
 6.	$ npm install -g create-react-app
 
-##Project build (Done per project basis)
+## Project build (Done per project basis)
 1.	$ create-react-app react-complete-guide --scripts-version 1.1.5
 2.	Add the folder within the "src" of the repo --> to the "src" of your react project
 3.	Install all below mentioned libraries
 
-##Libraries used
-####Bootstrap for react
+## Libraries used
+#### Bootstrap for react
 1.	$ npm install --save react-bootstrap bootstrap
 
 2. React Bootstrap doen't include the StyleSheets, It only includes the JavaScript parts. Therefore to get some default styles paste the below line in the index.html file just above the line  <title>React App</title>
@@ -28,25 +28,25 @@
 />
 ```
 
-####react router
+#### react router
 
 3. npm install --save react-router-dom
 
-####styled-components
+#### styled-components
 
 4. npm install --save styled-components
 
-####Nested Select Libraries
+#### Nested Select Libraries
 
 5. npm install --save css-animation
 
 6. npm install --save rc-menu
 
-####Recharts Graph Library
+#### Recharts Graph Library
 
 7. npm install --save recharts
 
-####Google fonts
+#### Google fonts
 You can any fonts of your choice from the below link:
 ```
 https://fonts.google.com/
