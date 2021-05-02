@@ -1,5 +1,13 @@
 # HALTWebServer
 
+## Prerequisite
+
+1. Create a virtual environement for the project
+2. Activate the virtual environment
+3. Install the all the requirement to run the server using:
+
+> pip3 install -r requirements.txt
+
 To run the server use below command
 > python server.py --mongoHost <IP> --mongoPort <port> --mongoDBName <my mongodb name> --mongoUsr <me> 
                  --mongoPass <pass> --mqttHost <IP> --mqttPort <port> --mqttUsr <me> --mqttPass <pass> 
