@@ -58,7 +58,7 @@ It quickly creates the IoT stack with __basic__ user authentication for all comp
         # OR
         docker-compose -f docker-compose.tigm.yml logs -f mosquitto
         # OR
-        docker-compose -f docker-compose.tigm.yml logs -f mongodb
+        docker-compose -f docker-compose.tigm.yml logs -f mongo
 
 ## Component Ports
 
