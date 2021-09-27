@@ -12,6 +12,9 @@
 
 2. Bosch BMI 160 Inertial Measurement Unit
 
+
+![image](https://user-images.githubusercontent.com/44448083/134967620-c8cce463-c3c9-40c3-ba44-a41f5fa6ee59.png)
+
 ## Note
 
 1. Since the IoT Stack is very often used in IoT Setups, therefore it is independent, dockerized and can be used standalone for various scenarios. The IoT stack is present in the directory: Highly-Accelerated-Life-Test-HALT-Monitoring-Tool/webClient/IoT Stack
