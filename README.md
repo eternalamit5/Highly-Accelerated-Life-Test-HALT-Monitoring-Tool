@@ -20,9 +20,16 @@
 Fig: Capacitor breakage observed during vibration HALT program
 
 - Comparison of raw and calibrated Accelerometer data when Z-axis is facing upward
+
 ![image](https://user-images.githubusercontent.com/44448083/134968021-37a54dff-ca05-4674-8cbc-5c27ed7c075c.png)
+
 ![image](https://user-images.githubusercontent.com/44448083/134968056-f9ba0c9c-5ff0-46af-af51-cdcc7f979986.png)
 
+- Comparison of raw and calibrated Gyroscope data
+
+![image](https://user-images.githubusercontent.com/44448083/134967902-c2625743-deda-490b-a31e-42c6004b9294.png)
+
+![image](https://user-images.githubusercontent.com/44448083/134967937-5308c0b2-f346-4903-bce2-324b0dffbb78.png)
 
 ## Calibration Methodology:
 
@@ -35,11 +42,6 @@ Fig: Capacitor breakage observed during vibration HALT program
 ![image](https://user-images.githubusercontent.com/44448083/134968415-78c7a284-26a3-4b46-a1f2-9071e231c3ae.png)
 
 
-
-- Comparison of raw and calibrated Gyroscope data
-![image](https://user-images.githubusercontent.com/44448083/134967902-c2625743-deda-490b-a31e-42c6004b9294.png)
-
-![image](https://user-images.githubusercontent.com/44448083/134967937-5308c0b2-f346-4903-bce2-324b0dffbb78.png)
 
 
 ## Note
