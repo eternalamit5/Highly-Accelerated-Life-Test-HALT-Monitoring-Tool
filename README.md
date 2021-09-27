@@ -44,6 +44,9 @@ Fig: Capacitor breakage observed during vibration HALT program
 ![image](https://user-images.githubusercontent.com/44448083/134968415-78c7a284-26a3-4b46-a1f2-9071e231c3ae.png)
 
 
+## Snapshot of Sensor Dashboard
+
+![image](https://user-images.githubusercontent.com/44448083/134969772-e2599e7c-7b4f-41dd-a662-0ca476a53885.png)
 
 
 ## Note
