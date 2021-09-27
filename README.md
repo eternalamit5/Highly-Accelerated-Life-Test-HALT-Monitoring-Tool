@@ -39,3 +39,7 @@ Comparison of raw and calibrated Gyroscope data
 2. Refer to `README.md` in each case directory for additional information.
 
 
+![image](https://user-images.githubusercontent.com/44448083/134968238-49b51877-4500-4e44-b84a-2a41d4c56c5c.png)
+
+
+
