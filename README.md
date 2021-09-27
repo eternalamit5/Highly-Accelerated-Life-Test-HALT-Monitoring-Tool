@@ -12,7 +12,7 @@
 
 2. Bosch BMI 160 Inertial Measurement Unit
 
-##Problem
+## Problem
 - Lack of proper test screening leads to premature failure of electronics product.
 
 ![image](https://user-images.githubusercontent.com/44448083/134967620-c8cce463-c3c9-40c3-ba44-a41f5fa6ee59.png)
@@ -23,7 +23,7 @@ Fig: Capacitor breakage observed during vibration HALT program
 ![image](https://user-images.githubusercontent.com/44448083/134968056-f9ba0c9c-5ff0-46af-af51-cdcc7f979986.png)
 
 
-##Calibration Methodology:
+## Calibration Methodology:
 
 - Three-point calibration of Accelerometer X-axis
 ![image](https://user-images.githubusercontent.com/44448083/134968361-609bf4a8-b542-402e-b856-1bd475a7fd6b.png)
