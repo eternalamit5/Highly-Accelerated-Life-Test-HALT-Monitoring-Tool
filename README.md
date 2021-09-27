@@ -34,11 +34,13 @@ Fig: Capacitor breakage observed during vibration HALT program
 ## Calibration Methodology:
 
 - Three-point calibration of Accelerometer X-axis
+
 ![image](https://user-images.githubusercontent.com/44448083/134968361-609bf4a8-b542-402e-b856-1bd475a7fd6b.png)
 
 
 
 - Regression analysis for Gyroscope X-axis data when angular speed= 120 Degree/Sec
+
 ![image](https://user-images.githubusercontent.com/44448083/134968415-78c7a284-26a3-4b46-a1f2-9071e231c3ae.png)
 
 
