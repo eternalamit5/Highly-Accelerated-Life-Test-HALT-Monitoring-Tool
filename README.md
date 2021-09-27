@@ -12,23 +12,33 @@
 
 2. Bosch BMI 160 Inertial Measurement Unit
 
+##Problem
+- Lack of proper test screening leads to premature failure of electronics product.
 
 ![image](https://user-images.githubusercontent.com/44448083/134967620-c8cce463-c3c9-40c3-ba44-a41f5fa6ee59.png)
+Fig: Capacitor breakage observed during vibration HALT program
 
-Capacitor breakage observed during vibration HALT program
-
+- Comparison of raw and calibrated Accelerometer data when Z-axis is facing upward
 ![image](https://user-images.githubusercontent.com/44448083/134968021-37a54dff-ca05-4674-8cbc-5c27ed7c075c.png)
 ![image](https://user-images.githubusercontent.com/44448083/134968056-f9ba0c9c-5ff0-46af-af51-cdcc7f979986.png)
-Comparison of raw and calibrated Accelerometer data when Z-axis is facing upward
+
+
+##Calibration Methodology:
+
+- Three-point calibration of Accelerometer X-axis
+![image](https://user-images.githubusercontent.com/44448083/134968361-609bf4a8-b542-402e-b856-1bd475a7fd6b.png)
+Three-point calibration of Accelerometer X-axis
+
+
+- Regression analysis for Gyroscope X-axis data when angular speed= 120 Degree/Sec
+![image](https://user-images.githubusercontent.com/44448083/134968415-78c7a284-26a3-4b46-a1f2-9071e231c3ae.png)
 
 
 
-
+- Comparison of raw and calibrated Gyroscope data
 ![image](https://user-images.githubusercontent.com/44448083/134967902-c2625743-deda-490b-a31e-42c6004b9294.png)
 
 ![image](https://user-images.githubusercontent.com/44448083/134967937-5308c0b2-f346-4903-bce2-324b0dffbb78.png)
-
-Comparison of raw and calibrated Gyroscope data
 
 
 ## Note
@@ -39,7 +49,7 @@ Comparison of raw and calibrated Gyroscope data
 2. Refer to `README.md` in each case directory for additional information.
 
 
-![image](https://user-images.githubusercontent.com/44448083/134968238-49b51877-4500-4e44-b84a-2a41d4c56c5c.png)
+
 
 
 
